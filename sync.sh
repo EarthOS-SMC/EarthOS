@@ -18,18 +18,25 @@ cp -r $SRC/config "$SRC/build/FSSC-Builder/config"
 mkdir "$SRC/build/FSSC-Builder/content"
 
 # Custom dependencies
+# EarthOS kernel
 if [ -d "${SRC}/content/earthos/kernel" ]; then
 	rm -rf "${SRC}/content/earthos/kernel"
 fi
 git clone https://github.com/EarthOS-kernel "${SRC}/content/earthos/kernel"
+rm "$SRC/content/earthos/kernel/LICENSE"
+rm "$SRC/content/earthos/kernel/README.md"
+# EarthOS installer
 if [ -d "${SRC}/content/earthos/install" ]; then
 	rm -rf "${SRC}/content/earthos/install"
 fi
 git clone https://github.com/EarthOS-installer "${SRC}/content/earthos/install"
+rm "$SRC/content/earthos/install/LICENSE"
+rm "$SRC/content/earthos/install/README.md"
+# EarthOS bootloader (EBL)
 if [ -d "${SRC}/content/earthos/ebl" ]; then
 	rm -rf "${SRC}/content/earthos/ebl"
 fi
 git clone https://github.com/EBL "${SRC}/content/earthos/ebl"
-rm -rf ./content/earthos/ebl/.git
-rm ./content/earthos/ebl/LICENSE
-rm ./content/earthos/ebl/README.md
+rm -rf "$SRC/content/earthos/ebl/.git"
+rm "$SRC/content/earthos/ebl/LICENSE"
+rm "$SRC/content/earthos/ebl/README.md"
