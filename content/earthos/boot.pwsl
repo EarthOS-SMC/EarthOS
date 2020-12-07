@@ -1,0 +1,2 @@
+print/"Loading EBL...",\n
+run/"/ebl/init.smc"/"bg"
