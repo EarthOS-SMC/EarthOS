@@ -134,7 +134,5 @@ if (($? != 0)); then
 fi
 mv ./output.fssc "${src}/${proj}.fssc"
 cd "$src"
-rm -rf ./build
 echo "Done!"
 echo "The output was saved in ${proj}.fssc"
-
