@@ -11,7 +11,7 @@ release="2.0.1" # EarthOS version
 echo "/boot/entry.conf" > ./content/earthos/ebl/entries.list
 
 # Server apps
-echo "SMC SSH - remote shell control" >> ./content/earthos/install/apps_server.list
+echo "SMC SSH - remote shell control" > ./content/earthos/install/apps_server.list
 
 # GUI apps
 : #nothing yet
