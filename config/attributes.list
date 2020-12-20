@@ -1,0 +1,65 @@
+### DO NOT REMOVE THE FIRST LINES ###
+fattn=()
+fatt=()
+###
+
+### c/
+# /boot.smc
+fattn[${#fattn[@]}]="/boot.smc"
+fatt[${#fatt[@]}]="r-xr-x---;root;root;"
+# /build.txt
+fattn[${#fattn[@]}]="/build.txt"
+fatt[${#fatt[@]}]="r--r--r--;root;root;"
+# /boot
+fattn[${#fattn[@]}]="/boot"
+fatt[${#fatt[@]}]="r--r-----;root;root;"
+# /ebl
+fattn[${#fattn[@]}]="/ebl"
+fatt[${#fatt[@]}]="r--r-----;root;root;"
+# /install
+fattn[${#fattn[@]}]="/install"
+fatt[${#fatt[@]}]="r--r--r--;root;root;"
+# /kernel
+fattn[${#fattn[@]}]="/kernel"
+fatt[${#fatt[@]}]="r--r-----;root;root;"
+
+### c/boot
+# /boot/entry.conf
+fattn[${#fattn[@]}]="/boot/entry.conf"
+fatt[${#fatt[@]}]="r--r-----;root;root;"
+
+### c/ebl
+# /ebl/entries.list
+fattn[${#fattn[@]}]="/ebl/entries.list"
+fatt[${#fatt[@]}]="r--r-----;root;root;"
+# /ebl/entry.smc
+fattn[${#fattn[@]}]="/ebl/entry.smc"
+fatt[${#fatt[@]}]="r-xr-x---;root;root;"
+# /ebl/init.smc
+fattn[${#fattn[@]}]="/ebl/init.smc"
+fatt[${#fatt[@]}]="r-xr-x---;root;root;"
+
+### c/install
+# /install/apps_gui.list
+fattn[${#fattn[@]}]="/install/apps_gui.list"
+fatt[${#fatt[@]}]="r--r-----;root;root;"
+# /install/apps_server.list
+fattn[${#fattn[@]}]="/install/apps_server.list"
+fatt[${#fatt[@]}]="r--r-----;root;root;"
+# /install/start.smc
+fattn[${#fattn[@]}]="/install/start.smc"
+fatt[${#fatt[@]}]="r-xr-x---;root;root;"
+# /install/autoinstall.smc
+fattn[${#fattn[@]}]="/install/autoinstall.smc"
+fatt[${#fatt[@]}]="r-xr-x---;root;root;"
+# /install/install.smc
+fattn[${#fattn[@]}]="/install/install.smc"
+fatt[${#fatt[@]}]="r-xr-x---;root;root;"
+
+### c/kernel
+# /kernel/continue.smc
+fattn[${#fattn[@]}]="/kernel/continue.smc"
+fatt[${#fatt[@]}]="r-xr-x---;root;root;"
+# /kernel/init.smc
+fattn[${#fattn[@]}]="/kernel/init.smc"
+fatt[${#fatt[@]}]="r-xr-x---;root;root;"
