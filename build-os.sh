@@ -86,7 +86,7 @@ while ((i1 < $((${#parts[@]})))); do
 					NAME="$EXT"
 					EXT=""
 				fi
-				if [[ "$EXT" = "pwsl" ]]; then
+				if [[ "$EXT" = "pwsl" ]] || [[ "$EXT" = "PWSL" ]] || [[ "$EXT" = "pwsle" ]] || [[ "$EXT" = "PWSLE" ]]; then
 					echo "Compiling file ${dirs[$((i4-1))]}/${partfiles[$((i5-1))]}"
 					cp "${dirs[$((i4-1))]}/${partfiles[$((i5-1))]}" ../../build/PowerSlash/
 					oldcd=$(pwd)
