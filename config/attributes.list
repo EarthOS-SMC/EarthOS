@@ -1,0 +1,39 @@
+#!/bin/bash
+### DO NOT REMOVE THE FIRST LINES ###
+fattn=()
+fatt=()
+###
+
+### c/
+# /boot.smc
+fattn[${#fattn[@]}]="/boot.smc"
+fatt[${#fatt[@]}]="rw-rw----;root;root;"
+# /boot
+fattn[${#fattn[@]}]="/boot"
+fatt[${#fatt[@]}]="rw-rw-r--;root;root;"
+# /etc
+fattn[${#fattn[@]}]="/etc"
+fatt[${#fatt[@]}]="rw-rw-r--;root;root;"
+# /bin
+fattn[${#fattn[@]}]="/bin"
+fatt[${#fatt[@]}]="rw-rw-r--;root;root;"
+# /sbin
+fattn[${#fattn[@]}]="/sbin"
+fatt[${#fatt[@]}]="rw-rw-r--;root;root;"
+
+### c/boot
+# /boot/ekrnl
+fattn[${#fattn[@]}]="/boot/ekrnl"
+fatt[${#fatt[@]}]="rw-rw----;root;root;"
+
+### c/etc
+# /etc/release
+fattn[${#fattn[@]}]="/etc/release"
+fatt[${#fatt[@]}]="rw-rw-r--;root;root;"
+
+### c/bin
+
+### c/sbin
+# /sbin/init
+fattn[${#fattn[@]}]="/sbin/init"
+fatt[${#fatt[@]}]="rw-rw-r--;root;root;"
