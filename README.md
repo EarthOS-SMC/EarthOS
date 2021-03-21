@@ -14,10 +14,10 @@ chmod +x sync.sh
 ## Building
 If this is the first time you're building (after you downloaded the sources), run
 ```
-chmod +x build-os.sh
+chmod +x build.sh
 ```
 Then, build EarthOS using the build script:
 ```
-./build-os.sh
+./build.sh
 ```
 The output will be saved in `EarthOS.fssc` and you can load it in SMC Computer.
