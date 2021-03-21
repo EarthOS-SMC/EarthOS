@@ -1,6 +1,0 @@
-// EarthOS installer boot script
-// EBL is unneeded here!
-//
-//print/"Loading EBL...",\n
-//run/"/ebl/init.smc"/"bg"
-run/"/install/start.smc"/"bg"
