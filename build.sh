@@ -91,6 +91,9 @@ cp ./parts/lbl/image ./content/earthos/boot.smc
 echo "
 ===== BUILDING EARTHOS KERNEL =====
 "
+if [ -f "./content/earthos/boot/.gitignore" ]; then
+	rm "./content/earthos/boot/.gitignore"
+fi
 cd ./parts/kernel
 echo 1 > reduce # Reduce output
 if ! [ -d compiler ]; then
