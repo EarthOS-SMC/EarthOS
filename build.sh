@@ -94,6 +94,12 @@ echo "
 if [ -f "./content/earthos/boot/.gitignore" ]; then
 	rm "./content/earthos/boot/.gitignore"
 fi
+if [ -f "./content/earthos/dev/.gitignore" ]; then
+	rm "./content/earthos/dev/.gitignore"
+fi
+if [ -f "./content/earthos/sys/.gitignore" ]; then
+	rm "./content/earthos/sys/.gitignore"
+fi
 cd ./parts/kernel
 echo 1 > reduce # Reduce output
 if ! [ -d compiler ]; then
