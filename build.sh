@@ -240,7 +240,11 @@ while ((i1 < $((${#parts[@]})))); do
 					fi
 				else
 					echo "Copying file ${dirs[$((i4-1))]}/${partfiles[$((i5-1))]}"
-					cp "${dirs[$((i4-1))]}/${partfiles[$((i5-1))]}" "../../build/FSSC-Builder/${parts[$((i1-1))]}/${dirs[$((i4-1))]}/${partfiles[$((i5-1))]}"
+					if [[ -d "${dirs[$((i4-1))]}/${partfiles[$((i5-1))]}" ]]; then
+						mkdir -p "../../build/FSSC-Builder/${parts[$((i1-1))]}/${dirs[$((i4-1))]}/${partfiles[$((i5-1))]}"
+					else
+						cp "${dirs[$((i4-1))]}/${partfiles[$((i5-1))]}" "../../build/FSSC-Builder/${parts[$((i1-1))]}/${dirs[$((i4-1))]}/${partfiles[$((i5-1))]}"
+					fi
 				fi
 			fi
 		done
