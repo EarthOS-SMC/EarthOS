@@ -156,7 +156,7 @@ cp ./parts/init/image ./content/earthos/sbin/init
 echo "
 ===== BUILDING USER-SETUP SERVICE =====
 "
-cd ./parts/init
+cd ./parts/user-setup
 echo 1 > reduce # Reduce output
 if ! [ -d compiler ]; then
 	chmod +x sync.sh
@@ -174,8 +174,8 @@ if ! [ -f ./content/earthos/lib/system ]; then
 fi
 rm ./content/earthos/lib/system/usrsetup
 rm ./content/earthos/lib/system/initcfg
-cp ./parts/init/usrsetup ./content/earthos/lib/system/usrsetup
-cp ./parts/init/initcfg ./content/earthos/lib/system/initcfg
+cp ./parts/user-setup/usrsetup ./content/earthos/lib/system/usrsetup
+cp ./parts/user-setup/initcfg ./content/earthos/lib/system/initcfg
 
 # Remaining files
 echo "
