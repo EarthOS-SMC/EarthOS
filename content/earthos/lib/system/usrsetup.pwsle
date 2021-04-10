@@ -1,0 +1,61 @@
+// EarthOS multi-user setup
+//
+//    Copyright (C) 2021  adazem009
+//
+// This executable registers users with the kernel.
+//
+//    This program is free software: you can redistribute it and/or modify
+//    it under the terms of the GNU General Public License as published by
+//    the Free Software Foundation, either version 3 of the License, or
+//    (at your option) any later version.
+//
+//    This program is distributed in the hope that it will be useful,
+//    but WITHOUT ANY WARRANTY; without even the implied warranty of
+//    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//    GNU General Public License for more details.
+//
+//    You should have received a copy of the GNU General Public License
+//    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+//
+// User must be root
+if/[%whoami != "root"]
+	print/"Only root can do that!",\n
+	exit
+endif
+// Read /lib/system/users/
+print/"debug: reading /lib/system/users/",\n
+ls/"/lib/system/users"/"USERS"
+// Check if root exists
+getindex/"USERS","root"/"ix"
+if/[ix == 0]
+	// Create missing root user
+	print/\c255000000,"N: ",\c255255255,"'root' user not found, creating",\n
+	//mkdir/"/lib/system/users/root"/"rw-rw----","root","root"
+endif
+// Register users
+getlistlength/"USERS"/"len"
+set/"i",0
+repeat/len
+	calc/"i=i+1"
+	getitem/"USERS",i/"user"
+	// root is already registered
+	if/[user != "root"]
+		// Register user
+		print/"debug: adding user ",user,\n
+		adduser/user
+	endif
+endloop
+// Check if main user exists
+// (the user who owns the computer of course)
+print/"debug: reading /lib/system/main-user",\n
+getfile/"/lib/system/main-user"/"main"
+getitem/"main",1/"user"
+if/[user == ""]
+	// This system is newly installed!
+	// We should configure it first...
+	print/\c255000000,"N: ",\c255255255,"main user not found, starting configuration",\n
+	print/"debug: executing /lib/system/initcfg",\n
+	getfile/"/lib/system/initcfg"/"file"
+	listtobin/file/"bin"
+	run/bin,"wait","root"
+endif
