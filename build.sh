@@ -152,6 +152,31 @@ fi
 rm ./content/earthos/sbin/init
 cp ./parts/init/image ./content/earthos/sbin/init
 
+# USER-SETUP
+echo "
+===== BUILDING USER-SETUP SERVICE =====
+"
+cd ./parts/init
+echo 1 > reduce # Reduce output
+if ! [ -d compiler ]; then
+	chmod +x sync.sh
+	./sync.sh
+fi
+./build.sh usrsetup.pwsle && ./build.sh initcfg.pwsle
+sv=$?
+if ((sv != 0)); then
+	echo -e "${RED}Failed to build the service - process exited with code ${YELLOW}${exit}${NC}"
+	exit $sv
+fi
+cd "$src"
+if ! [ -f ./content/earthos/lib/system ]; then
+	mkdir -p ./content/earthos/lib/system
+fi
+rm ./content/earthos/lib/system/usrsetup
+rm ./content/earthos/lib/system/initcfg
+cp ./parts/init/usrsetup ./content/earthos/lib/system/usrsetup
+cp ./parts/init/initcfg ./content/earthos/lib/system/initcfg
+
 # Remaining files
 echo "
 ===== COMPILING REMAINING USER-SPACE FILES ===
