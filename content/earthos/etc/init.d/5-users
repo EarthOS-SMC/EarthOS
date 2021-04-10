@@ -1,0 +1,8 @@
+name
+Set up users
+user
+root
+exec
+/lib/system/usrsetup
+wait
+true
