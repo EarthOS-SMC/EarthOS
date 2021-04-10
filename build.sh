@@ -100,6 +100,9 @@ fi
 if [ -f "./content/earthos/sys/.gitignore" ]; then
 	rm "./content/earthos/sys/.gitignore"
 fi
+if [ -f "./content/earthos/lib/system/users/.gitignore" ]; then
+	rm "./content/earthos/lib/system/users/.gitignore"
+fi
 cd ./parts/kernel
 echo 1 > reduce # Reduce output
 if ! [ -d compiler ]; then
