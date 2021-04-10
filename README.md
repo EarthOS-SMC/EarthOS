@@ -12,11 +12,7 @@ chmod +x sync.sh
 ./sync.sh
 ```
 ## Building
-If this is the first time you're building (after you downloaded the sources), run
-```
-chmod +x build.sh
-```
-Then, build EarthOS using the build script:
+Build EarthOS using the build script:
 ```
 ./build.sh
 ```
