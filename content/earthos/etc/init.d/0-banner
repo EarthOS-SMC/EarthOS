@@ -1,0 +1,8 @@
+name
+Banner
+user
+root
+exec
+/sbin/banner
+wait
+true
