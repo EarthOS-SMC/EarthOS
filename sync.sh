@@ -47,3 +47,6 @@ rm -rf "$SRC/build/FSSC-Builder/content"
 cp $SRC/project.conf "$SRC/build/FSSC-Builder/project.conf"
 cp -r $SRC/config "$SRC/build/FSSC-Builder/config"
 mkdir "$SRC/build/FSSC-Builder/content"
+
+# Auto chmod +x
+chmod +x build.sh
