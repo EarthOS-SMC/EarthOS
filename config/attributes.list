@@ -26,6 +26,9 @@ fatt[${#fatt[@]}]="rw-rw-r--;root;root;"
 # /sys
 fattn[${#fattn[@]}]="/sys"
 fatt[${#fatt[@]}]="rw-rw-r--;root;root;"
+# /lib
+fattn[${#fattn[@]}]="/lib"
+fatt[${#fatt[@]}]="rw-rw-r--;root;root;"
 
 ### c/boot
 # /boot/ekrnl
@@ -54,7 +57,26 @@ fatt[${#fatt[@]}]="rwxrwxr-x;root;root;"
 
 ### c/sys
 
+### c/lib
+# /lib/system
+fattn[${#fattn[@]}]="/lib/system"
+fatt[${#fatt[@]}]="rw-rw-r--;root;root;"
+
 ### c/etc/init.d
 # /etc/init.d/0-banner
 fattn[${#fattn[@]}]="/etc/init.d/0-banner"
 fatt[${#fatt[@]}]="rw-rw-r--;root;root;"
+# /etc/init.d/5-users
+fattn[${#fattn[@]}]="/etc/init.d/5-users"
+fatt[${#fatt[@]}]="rw-rw-r--;root;root;"
+
+### c/lib/system
+# /lib/system/usrsetup
+fattn[${#fattn[@]}]="/lib/system/usrsetup"
+fatt[${#fatt[@]}]="rwxrwxr--;root;root;"
+# /lib/system/initcfg
+fattn[${#fattn[@]}]="/lib/system/initcfg"
+fatt[${#fatt[@]}]="rwxrwxr--;root;root;"
+# /lib/system/users
+fattn[${#fattn[@]}]="/lib/system/users"
+fatt[${#fatt[@]}]="rw-rw----;root;root;"
