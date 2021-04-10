@@ -20,6 +20,12 @@ fatt[${#fatt[@]}]="rw-rw-r--;root;root;"
 # /sbin
 fattn[${#fattn[@]}]="/sbin"
 fatt[${#fatt[@]}]="rw-rw-r--;root;root;"
+# /dev
+fattn[${#fattn[@]}]="/dev"
+fatt[${#fatt[@]}]="rw-rw-r--;root;root;"
+# /sys
+fattn[${#fattn[@]}]="/sys"
+fatt[${#fatt[@]}]="rw-rw-r--;root;root;"
 
 ### c/boot
 # /boot/ekrnl
@@ -30,10 +36,25 @@ fatt[${#fatt[@]}]="rw-rw----;root;root;"
 # /etc/release
 fattn[${#fattn[@]}]="/etc/release"
 fatt[${#fatt[@]}]="rw-rw-r--;root;root;"
+# /etc/init.d
+fattn[${#fattn[@]}]="/etc/init.d"
+fatt[${#fatt[@]}]="rw-rw-r--;root;root;"
 
 ### c/bin
 
 ### c/sbin
 # /sbin/init
 fattn[${#fattn[@]}]="/sbin/init"
+fatt[${#fatt[@]}]="rwxrwxr-x;root;root;"
+# /sbin/banner
+fattn[${#fattn[@]}]="/sbin/banner"
+fatt[${#fatt[@]}]="rwxrwxr-x;root;root;"
+
+### c/dev
+
+### c/sys
+
+### c/etc/init.d
+# /etc/init.d/0-banner
+fattn[${#fattn[@]}]="/etc/init.d/0-banner"
 fatt[${#fatt[@]}]="rw-rw-r--;root;root;"
