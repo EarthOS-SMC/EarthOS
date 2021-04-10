@@ -47,6 +47,21 @@ if [ -f "./${proj}.fssc" ]; then
 fi
 src=$(pwd)
 
+# Remove .gitignore(s)
+if [ -f "./content/earthos/boot/.gitignore" ]; then
+	rm "./content/earthos/boot/.gitignore"
+fi
+if [ -f "./content/earthos/dev/.gitignore" ]; then
+	rm "./content/earthos/dev/.gitignore"
+fi
+if [ -f "./content/earthos/sys/.gitignore" ]; then
+	rm "./content/earthos/sys/.gitignore"
+fi
+if [ -f "./content/earthos/lib/system/users/.gitignore" ]; then
+	rm "./content/earthos/lib/system/users/.gitignore"
+fi
+
+# Kernel-space
 # MBR
 echo "
 ===== BUILDING MBR =====
@@ -67,7 +82,7 @@ cd "$src"
 rm ./build/FSSC-Builder/mbr
 cp ./parts/mbr/image ./build/FSSC-Builder/mbr
 
-# MBR
+# Little bootloader
 echo "
 ===== BUILDING LITTLE BOOTLOADER =====
 "
@@ -91,18 +106,6 @@ cp ./parts/lbl/image ./content/earthos/boot.smc
 echo "
 ===== BUILDING EARTHOS KERNEL =====
 "
-if [ -f "./content/earthos/boot/.gitignore" ]; then
-	rm "./content/earthos/boot/.gitignore"
-fi
-if [ -f "./content/earthos/dev/.gitignore" ]; then
-	rm "./content/earthos/dev/.gitignore"
-fi
-if [ -f "./content/earthos/sys/.gitignore" ]; then
-	rm "./content/earthos/sys/.gitignore"
-fi
-if [ -f "./content/earthos/lib/system/users/.gitignore" ]; then
-	rm "./content/earthos/lib/system/users/.gitignore"
-fi
 cd ./parts/kernel
 echo 1 > reduce # Reduce output
 if ! [ -d compiler ]; then
@@ -122,6 +125,10 @@ fi
 rm ./content/earthos/boot/ekrnl
 cp ./parts/kernel/image ./content/earthos/boot/ekrnl
 
+echo "=====
+Kernel-space setup finished."
+
+# User-space
 # INIT
 echo "
 ===== BUILDING INIT SYSTEM =====
@@ -145,10 +152,8 @@ fi
 rm ./content/earthos/sbin/init
 cp ./parts/init/image ./content/earthos/sbin/init
 
-# User-space
+# Remaining files
 echo "
-=====
-Kernel-space setup finished.
 ===== COMPILING REMAINING USER-SPACE FILES ===
 "
 
