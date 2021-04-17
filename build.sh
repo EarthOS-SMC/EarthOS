@@ -82,7 +82,7 @@ if ! [ -d compiler ]; then
 	echo -e "${RED}Failed to sync the dependencies - process exited with code ${YELLOW}${?}${NC}"; echo; echo "Debug info: "; ./sync.sh; exit 1
 	}
 fi
-./build.sh
+./build.sh "" "" "$auto"
 sv=$?
 if ((sv != 0)); then
 	echo -e "${RED}Failed to build the MBR - process exited with code ${YELLOW}${sv}${NC}"
@@ -104,7 +104,7 @@ if ! [ -d compiler ]; then
 	echo -e "${RED}Failed to sync the dependencies - process exited with code ${YELLOW}${?}${NC}"; echo; echo "Debug info: "; ./sync.sh; exit 1
 	}
 fi
-./build.sh
+./build.sh "" "" "$auto"
 sv=$?
 if ((sv != 0)); then
 	echo -e "${RED}Failed to build the bootloader - process exited with code ${YELLOW}${sv}${NC}"
@@ -126,7 +126,7 @@ if ! [ -d compiler ]; then
 	echo -e "${RED}Failed to sync the dependencies - process exited with code ${YELLOW}${?}${NC}"; echo; echo "Debug info: "; ./sync.sh; exit 1
 	}
 fi
-./build.sh
+./build.sh "" "" "$auto"
 sv=$?
 if ((sv != 0)); then
 	echo -e "${RED}Failed to build the kernel - process exited with code ${YELLOW}${sv}${NC}"
@@ -155,10 +155,10 @@ if ! [ -d compiler ]; then
 	echo -e "${RED}Failed to sync the dependencies - process exited with code ${YELLOW}${?}${NC}"; echo; echo "Debug info: "; ./sync.sh; exit 1
 	}
 fi
-./build.sh
+./build.sh "" "" "$auto"
 sv=$?
 if ((sv != 0)); then
-	echo -e "${RED}Failed to build the init system - process exited with code ${YELLOW}${exit}${NC}"
+	echo -e "${RED}Failed to build the init system - process exited with code ${YELLOW}${sv}${NC}"
 	exit $sv
 fi
 cd "$src"
@@ -180,10 +180,10 @@ if ! [ -d compiler ]; then
 	echo -e "${RED}Failed to sync the dependencies - process exited with code ${YELLOW}${?}${NC}"; echo; echo "Debug info: "; ./sync.sh; exit 1
 	}
 fi
-./build.sh usrsetup.pwsle && ./build.sh initcfg.pwsle
+./build.sh usrsetup.pwsle  "" "$auto" && ./build.sh initcfg.pwsle "" "$auto"
 sv=$?
 if ((sv != 0)); then
-	echo -e "${RED}Failed to build the service - process exited with code ${YELLOW}${exit}${NC}"
+	echo -e "${RED}Failed to build the service - process exited with code ${YELLOW}${sv}${NC}"
 	exit $sv
 fi
 cd "$src"
@@ -304,7 +304,7 @@ echo "
 "
 cd ./build/FSSC-Builder
 chmod +x ./build.sh
-./build.sh
+./build.sh "$auto"
 ec=$?
 if (($ec != 0)); then
 	echo -e "${RED}Failed to build PC code - process exited with code ${YELLOW}$ec${NC}"
