@@ -3,6 +3,7 @@
 # EarthOS build system
 # 2021 - adazem009
 cd "$(dirname $BASH_SOURCE)"
+auto="$1"
 if ! [ -d "./build" ]; then
 	echo "Couldn't find the build directory! Did you run sync.sh?"
 	echo "Aborting build."
@@ -38,10 +39,17 @@ echo "---------------------------"
 rm -rf "./build/FSSC-Builder/content" && mkdir "./build/FSSC-Builder/content"
 chmod +x ./setup.sh
 source ./setup.sh
-RED='\033[0;31m'
-GREEN='\033[0;32m'
-YELLOW='\033[1;33m'
-NC='\033[0m'
+if [[ "$auto" = "1" ]]; then
+	RED=''
+	GREEN=''
+	YELLOW=''
+	NC=''
+else
+	RED='\033[0;31m'
+	GREEN='\033[0;32m'
+	YELLOW='\033[1;33m'
+	NC='\033[0m'
+fi
 if [ -f "./${proj}.fssc" ]; then
 	rm "./${proj}.fssc"
 fi
