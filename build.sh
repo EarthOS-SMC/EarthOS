@@ -257,7 +257,7 @@ while ((i1 < $((${#parts[@]})))); do
 					oldcd=$(pwd)
 					cd ../../build/PowerSlash-userspace
 					chmod +x ./compile.sh
-					./compile.sh "${partfiles[$((i5-1))]}" 1 # Reduce output
+					./compile.sh "${partfiles[$((i5-1))]}" 1 "" "$auto"
 					exit=$?
 					if ((exit != 0)); then
 						echo -e "${RED}Failed to compile ${dirs[$((i4-1))]}/${partfiles[$((i5-1))]} - process exited with code ${YELLOW}${exit}${NC}"
