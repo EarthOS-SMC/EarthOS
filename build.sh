@@ -71,7 +71,7 @@ echo 1 > reduce # Reduce output
 if ! [ -d compiler ]; then
 	chmod +x sync.sh
 	dummy=`(./sync.sh) &> /dev/null` || {
-	echo -e "${RED}Failed to sync the dependencies - process exited with code ${YELLOW}${?}${NC}"; echo; echo "Debug info: "; ./sync.sh; exit
+	echo -e "${RED}Failed to sync the dependencies - process exited with code ${YELLOW}${?}${NC}"; echo; echo "Debug info: "; ./sync.sh; exit 1
 	}
 fi
 ./build.sh
@@ -93,7 +93,7 @@ echo 1 > reduce # Reduce output
 if ! [ -d compiler ]; then
 	chmod +x sync.sh
 	dummy=`(./sync.sh) &> /dev/null` || {
-	echo -e "${RED}Failed to sync the dependencies - process exited with code ${YELLOW}${?}${NC}"; echo; echo "Debug info: "; ./sync.sh; exit
+	echo -e "${RED}Failed to sync the dependencies - process exited with code ${YELLOW}${?}${NC}"; echo; echo "Debug info: "; ./sync.sh; exit 1
 	}
 fi
 ./build.sh
@@ -115,7 +115,7 @@ echo 1 > reduce # Reduce output
 if ! [ -d compiler ]; then
 	chmod +x sync.sh
 	dummy=`(./sync.sh) &> /dev/null` || {
-	echo -e "${RED}Failed to sync the dependencies - process exited with code ${YELLOW}${?}${NC}"; echo; echo "Debug info: "; ./sync.sh; exit
+	echo -e "${RED}Failed to sync the dependencies - process exited with code ${YELLOW}${?}${NC}"; echo; echo "Debug info: "; ./sync.sh; exit 1
 	}
 fi
 ./build.sh
@@ -144,7 +144,7 @@ echo 1 > reduce # Reduce output
 if ! [ -d compiler ]; then
 	chmod +x sync.sh
 	dummy=`(./sync.sh) &> /dev/null` || {
-	echo -e "${RED}Failed to sync the dependencies - process exited with code ${YELLOW}${?}${NC}"; echo; echo "Debug info: "; ./sync.sh; exit
+	echo -e "${RED}Failed to sync the dependencies - process exited with code ${YELLOW}${?}${NC}"; echo; echo "Debug info: "; ./sync.sh; exit 1
 	}
 fi
 ./build.sh
@@ -169,7 +169,7 @@ echo 1 > reduce # Reduce output
 if ! [ -d compiler ]; then
 	chmod +x sync.sh
 	dummy=`(./sync.sh) &> /dev/null` || {
-	echo -e "${RED}Failed to sync the dependencies - process exited with code ${YELLOW}${?}${NC}"; echo; echo "Debug info: "; ./sync.sh; exit
+	echo -e "${RED}Failed to sync the dependencies - process exited with code ${YELLOW}${?}${NC}"; echo; echo "Debug info: "; ./sync.sh; exit 1
 	}
 fi
 ./build.sh usrsetup.pwsle && ./build.sh initcfg.pwsle
