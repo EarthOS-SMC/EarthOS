@@ -39,7 +39,7 @@ echo "---------------------------"
 rm -rf "./build/FSSC-Builder/content" && mkdir "./build/FSSC-Builder/content"
 chmod +x ./setup.sh
 source ./setup.sh
-if [[ "$auto" = "1" ]]; then
+if [[ "$auto" = "1" ]]; then
 	RED=''
 	GREEN=''
 	YELLOW=''
