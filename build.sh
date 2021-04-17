@@ -70,7 +70,9 @@ cd ./parts/mbr
 echo 1 > reduce # Reduce output
 if ! [ -d compiler ]; then
 	chmod +x sync.sh
-	./sync.sh
+	dummy=`(./sync.sh) &> /dev/null` || {
+	echo -e "${RED}Failed to sync the dependencies - process exited with code ${YELLOW}${?}${NC}"; echo; echo "Debug info: "; ./sync.sh; exit
+	}
 fi
 ./build.sh
 sv=$?
@@ -90,7 +92,9 @@ cd ./parts/lbl
 echo 1 > reduce # Reduce output
 if ! [ -d compiler ]; then
 	chmod +x sync.sh
-	./sync.sh
+	dummy=`(./sync.sh) &> /dev/null` || {
+	echo -e "${RED}Failed to sync the dependencies - process exited with code ${YELLOW}${?}${NC}"; echo; echo "Debug info: "; ./sync.sh; exit
+	}
 fi
 ./build.sh
 sv=$?
@@ -110,7 +114,9 @@ cd ./parts/kernel
 echo 1 > reduce # Reduce output
 if ! [ -d compiler ]; then
 	chmod +x sync.sh
-	./sync.sh
+	dummy=`(./sync.sh) &> /dev/null` || {
+	echo -e "${RED}Failed to sync the dependencies - process exited with code ${YELLOW}${?}${NC}"; echo; echo "Debug info: "; ./sync.sh; exit
+	}
 fi
 ./build.sh
 sv=$?
@@ -137,7 +143,9 @@ cd ./parts/init
 echo 1 > reduce # Reduce output
 if ! [ -d compiler ]; then
 	chmod +x sync.sh
-	./sync.sh
+	dummy=`(./sync.sh) &> /dev/null` || {
+	echo -e "${RED}Failed to sync the dependencies - process exited with code ${YELLOW}${?}${NC}"; echo; echo "Debug info: "; ./sync.sh; exit
+	}
 fi
 ./build.sh
 sv=$?
@@ -160,7 +168,9 @@ cd ./parts/user-setup
 echo 1 > reduce # Reduce output
 if ! [ -d compiler ]; then
 	chmod +x sync.sh
-	./sync.sh
+	dummy=`(./sync.sh) &> /dev/null` || {
+	echo -e "${RED}Failed to sync the dependencies - process exited with code ${YELLOW}${?}${NC}"; echo; echo "Debug info: "; ./sync.sh; exit
+	}
 fi
 ./build.sh usrsetup.pwsle && ./build.sh initcfg.pwsle
 sv=$?
