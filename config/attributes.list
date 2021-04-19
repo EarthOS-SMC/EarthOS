@@ -42,6 +42,12 @@ fatt[${#fatt[@]}]="rw-rw-r--;root;root;"
 # /etc/init.d
 fattn[${#fattn[@]}]="/etc/init.d"
 fatt[${#fatt[@]}]="rw-rw-r--;root;root;"
+# /etc/official
+fattn[${#fattn[@]}]="/etc/official"
+fatt[${#fatt[@]}]="rw-rw-r--;root;root;"
+# /etc/id
+fattn[${#fattn[@]}]="/etc/id"
+fatt[${#fatt[@]}]="rw-rw-r--;root;root;"
 
 ### c/bin
 
