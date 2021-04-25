@@ -29,6 +29,9 @@ fatt[${#fatt[@]}]="rw-rw-r--;root;root;"
 # /lib
 fattn[${#fattn[@]}]="/lib"
 fatt[${#fatt[@]}]="rw-rw-r--;root;root;"
+# /var
+fattn[${#fattn[@]}]="/var"
+fatt[${#fatt[@]}]="rw-rw-r--;root;root;"
 
 ### c/boot
 # /boot/ekrnl
@@ -48,8 +51,14 @@ fatt[${#fatt[@]}]="rw-rw-r--;root;root;"
 # /etc/id
 fattn[${#fattn[@]}]="/etc/id"
 fatt[${#fatt[@]}]="rw-rw-r--;root;root;"
+# /etc/hostname
+fattn[${#fattn[@]}]="/etc/hostname"
+fatt[${#fatt[@]}]="rw-rw-r--;root;root;"
 
 ### c/bin
+# /bin/shell
+fattn[${#fattn[@]}]="/bin/shell"
+fatt[${#fatt[@]}]="rwxrwxr-x;root;root;"
 
 ### c/sbin
 # /sbin/init
@@ -68,12 +77,20 @@ fatt[${#fatt[@]}]="rwxrwxr-x;root;root;"
 fattn[${#fattn[@]}]="/lib/system"
 fatt[${#fatt[@]}]="rw-rw-r--;root;root;"
 
+### c/var
+# /var/init.d
+fattn[${#fattn[@]}]="/var/init.d"
+fatt[${#fatt[@]}]="rw-rw-r--;root;root;"
+
 ### c/etc/init.d
 # /etc/init.d/0-banner
 fattn[${#fattn[@]}]="/etc/init.d/0-banner"
 fatt[${#fatt[@]}]="rw-rw-r--;root;root;"
 # /etc/init.d/5-users
 fattn[${#fattn[@]}]="/etc/init.d/5-users"
+fatt[${#fatt[@]}]="rw-rw-r--;root;root;"
+# /etc/init.d/100-ui
+fattn[${#fattn[@]}]="/etc/init.d/100-ui"
 fatt[${#fatt[@]}]="rw-rw-r--;root;root;"
 
 ### c/lib/system
@@ -86,3 +103,11 @@ fatt[${#fatt[@]}]="rwxrwxr--;root;root;"
 # /lib/system/users
 fattn[${#fattn[@]}]="/lib/system/users"
 fatt[${#fatt[@]}]="rw-rw----;root;root;"
+# /lib/system/ui
+fattn[${#fattn[@]}]="/lib/system/ui"
+fatt[${#fatt[@]}]="rwxrwxr--;root;root;"
+
+### c/var/init.d
+# /var/init.d/power-trigger
+fattn[${#fattn[@]}]="/var/init.d/power-trigger"
+fatt[${#fatt[@]}]="rw-rw-r--;root;root;"
