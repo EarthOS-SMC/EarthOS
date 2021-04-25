@@ -3,7 +3,7 @@ EarthOS source tree
 ## Downloading sources
 Before you start with anything, make sure you have `git` installed and you've already clonned this repository:
 ```
-git clone https://github.com/adazem009/EarthOS
+git clone https://github.com/EarthOS-SMC/EarthOS
 cd EarthOS
 ```
 To download all the sources required to build EarthOS, run:
