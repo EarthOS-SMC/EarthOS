@@ -195,6 +195,50 @@ rm ./content/earthos/lib/system/initcfg
 cp ./parts/user-setup/usrsetup ./content/earthos/lib/system/usrsetup
 cp ./parts/user-setup/initcfg ./content/earthos/lib/system/initcfg
 
+# UI
+echo "
+===== BUILDING USER INTERFACE =====
+"
+cd ./parts/ui
+echo 1 > reduce # Reduce output
+if ! [ -d compiler ]; then
+	chmod +x sync.sh
+	dummy=`(./sync.sh) &> /dev/null` || {
+	echo -e "${RED}Failed to sync the dependencies - process exited with code ${YELLOW}${?}${NC}"; echo; echo "Debug info: "; ./sync.sh; exit 1
+	}
+fi
+./build.sh "" "" "$auto"
+sv=$?
+if ((sv != 0)); then
+	echo -e "${RED}Failed to build user interface - process exited with code ${YELLOW}${sv}${NC}"
+	exit $sv
+fi
+cd "$src"
+rm ./content/earthos/lib/system/ui
+cp ./parts/ui/image ./content/earthos/lib/system/ui
+
+# SHELL
+echo "
+===== BUILDING SHELL =====
+"
+cd ./parts/shell
+echo 1 > reduce # Reduce output
+if ! [ -d compiler ]; then
+	chmod +x sync.sh
+	dummy=`(./sync.sh) &> /dev/null` || {
+	echo -e "${RED}Failed to sync the dependencies - process exited with code ${YELLOW}${?}${NC}"; echo; echo "Debug info: "; ./sync.sh; exit 1
+	}
+fi
+./build.sh "" "" "$auto"
+sv=$?
+if ((sv != 0)); then
+	echo -e "${RED}Failed to build shell - process exited with code ${YELLOW}${sv}${NC}"
+	exit $sv
+fi
+cd "$src"
+rm ./content/earthos/bin/shell
+cp ./parts/shell/image ./content/earthos/bin/shell
+
 # Remaining files
 echo "
 ===== COMPILING REMAINING USER-SPACE FILES ===
