@@ -1,8 +1,0 @@
-name
-WIP notice
-user
-root
-exec
-/sbin/wip-notice
-wait
-true
