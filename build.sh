@@ -71,6 +71,9 @@ fi
 if [ -f "./content/earthos/bin/.gitignore" ]; then
 	rm "./content/earthos/bin/.gitignore"
 fi
+if [ -f "./content/earthos/proc/.gitignore" ]; then
+	rm "./content/earthos/proc/.gitignore"
+fi
 
 # Kernel-space
 # MBR
