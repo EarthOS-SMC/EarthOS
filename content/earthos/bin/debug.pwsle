@@ -1,0 +1,96 @@
+// EarthOS temporary debug tool
+//
+//    Copyright (C) 2021  adazem009
+//
+//    This tool is only for debugging. It'll be removed soon.
+//    The code below is probably hard to understand and it doesn't have any support.
+//
+//    This program is free software: you can redistribute it and/or modify
+//    it under the terms of the GNU General Public License as published by
+//    the Free Software Foundation, either version 3 of the License, or
+//    (at your option) any later version.
+//
+//    This program is distributed in the hope that it will be useful,
+//    but WITHOUT ANY WARRANTY; without even the implied warranty of
+//    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//    GNU General Public License for more details.
+//
+//    You should have received a copy of the GNU General Public License
+//    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+//
+set/"cmd",""
+while/[cmd != "exit"]
+	print/"> "
+	read/"","cmd"
+	print/cmd,\n
+	if/[cmd == "ls"]
+		print/"Path: "
+		read/"","path"
+		print/path,\n
+		ls/path/"list"
+		getlistlength/"list"/"len"
+		set/"i",0
+		repeat/len
+			calc/"i=i+1"
+			getitem/"list",i/"it"
+			print/it,\n
+		endloop
+	else
+		if/[cmd == "cat"]
+			print/"Path: "
+			read/"","path"
+			print/path,\n
+			getfile/path/"list"
+			getlistlength/"list"/"len"
+			set/"i",0
+			repeat/len
+				calc/"i=i+1"
+				getitem/"list",i/"it"
+				print/it,\n
+			endloop
+		else
+			if/[cmd == "write"]
+				print/"Path: "
+				read/"","path"
+				print/path,\n
+				setlist/"data"
+				set/"line",""
+				while/[line != "EOF"]
+					print/"Line (EOF to stop): "
+					read/"","line"
+					print/line,\n
+					if/[line != "EOF"]
+						append/line/"data"
+					endif
+				endloop
+				write/path/"data"
+			else
+				if/[cmd == "ftest"]
+					// Path
+					print/"Path: "
+					read/"","path"
+					print/path,\n
+					// Mode
+					print/"Mode: "
+					read/"","mode"
+					print/mode,\n
+					// Type
+					print/"Type: "
+					read/"","type"
+					print/type,\n
+					ftest/path,mode,type/"list"
+					set/"ret",%returnc
+					print/"Return code: ",ret,\n
+					print/\n,"File info:",\n
+					getlistlength/"list"/"len"
+					set/"i",0
+					repeat/len
+						calc/"i=i+1"
+						getitem/"list",i/"it"
+						print/it,\n
+					endloop
+				endif
+			endif
+		endif
+	endif
+endloop
