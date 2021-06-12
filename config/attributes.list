@@ -81,9 +81,6 @@ fattn[${#fattn[@]}]="/lib/system"
 fatt[${#fatt[@]}]="rw-rw-r--;root;root;"
 
 ### c/var
-# /var/init.d
-fattn[${#fattn[@]}]="/var/init.d"
-fatt[${#fatt[@]}]="rw-rw-r--;root;root;"
 
 ### c/etc/init.d
 # /etc/init.d/0-banner
@@ -109,8 +106,3 @@ fatt[${#fatt[@]}]="rw-rw----;root;root;"
 # /lib/system/ui
 fattn[${#fattn[@]}]="/lib/system/ui"
 fatt[${#fatt[@]}]="rwxrwxr--;root;root;"
-
-### c/var/init.d
-# /var/init.d/power-trigger
-fattn[${#fattn[@]}]="/var/init.d/power-trigger"
-fatt[${#fatt[@]}]="rw-rw-r--;root;root;"
