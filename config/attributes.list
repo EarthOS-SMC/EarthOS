@@ -32,6 +32,9 @@ fatt[${#fatt[@]}]="rw-rw-r--;root;root;"
 # /var
 fattn[${#fattn[@]}]="/var"
 fatt[${#fatt[@]}]="rw-rw-r--;root;root;"
+# /proc
+fattn[${#fattn[@]}]="/proc"
+fatt[${#fatt[@]}]="r--r--r--;root;root;"
 
 ### c/boot
 # /boot/ekrnl
