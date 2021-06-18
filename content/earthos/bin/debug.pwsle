@@ -20,13 +20,9 @@
 //
 set/"cmd",""
 while/[cmd != "exit"]
-	print/"> "
-	read/"","cmd"
-	print/cmd,\n
+	read/"> ","cmd"
 	if/[cmd == "ls"]
-		print/"Path: "
-		read/"","path"
-		print/path,\n
+		read/"Path: ","path"
 		ls/path/"list"
 		getlistlength/"list"/"len"
 		set/"i",0
@@ -37,9 +33,7 @@ while/[cmd != "exit"]
 		endloop
 	else
 		if/[cmd == "cat"]
-			print/"Path: "
-			read/"","path"
-			print/path,\n
+			read/"Path: ","path"
 			getfile/path/"list"
 			getlistlength/"list"/"len"
 			set/"i",0
@@ -50,15 +44,11 @@ while/[cmd != "exit"]
 			endloop
 		else
 			if/[cmd == "write"]
-				print/"Path: "
-				read/"","path"
-				print/path,\n
+				read/"Path: ","path"
 				setlist/"data"
 				set/"line",""
 				while/[line != "EOF"]
-					print/"Line (EOF to stop): "
-					read/"","line"
-					print/line,\n
+					read/"Line (EOF to stop): ","line"
 					if/[line != "EOF"]
 						append/line/"data"
 					endif
@@ -67,17 +57,11 @@ while/[cmd != "exit"]
 			else
 				if/[cmd == "ftest"]
 					// Path
-					print/"Path: "
-					read/"","path"
-					print/path,\n
+					read/"Path: ","path"
 					// Mode
-					print/"Mode: "
-					read/"","mode"
-					print/mode,\n
+					read/"Mode: ","mode"
 					// Type
-					print/"Type: "
-					read/"","type"
-					print/type,\n
+					read/"Type: ","type"
 					ftest/path,mode,type/"list"
 					set/"ret",%returnc
 					print/"Return code: ",ret,\n
