@@ -1,0 +1,10 @@
+#!/bin/bash
+### DO NOT REMOVE THE FIRST LINES ###
+fattn=()
+fatt=()
+###
+
+### c/
+# /ekrnl
+fattn[${#fattn[@]}]="/ekrnl"
+fatt[${#fatt[@]}]="rw-rw----;root;root;"

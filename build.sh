@@ -117,8 +117,11 @@ if ((sv != 0)); then
 	exit $sv
 fi
 cd "$src"
-rm ./content/earthos/boot.smc
-cp ./parts/lbl/image ./content/earthos/boot.smc
+if ! [ -f ./content/boot ]; then
+	mkdir -p ./content/boot
+fi
+rm ./content/boot/boot.smc
+cp ./parts/lbl/image ./content/boot/boot.smc
 
 # KERNEL
 echo "
@@ -139,11 +142,8 @@ if ((sv != 0)); then
 	exit $sv
 fi
 cd "$src"
-if ! [ -f ./content/earthos/boot ]; then
-	mkdir -p ./content/earthos/boot
-fi
-rm ./content/earthos/boot/ekrnl
-cp ./parts/kernel/image ./content/earthos/boot/ekrnl
+rm ./content/boot/ekrnl
+cp ./parts/kernel/image ./content/boot/ekrnl
 
 echo "=====
 Kernel-space setup finished."
@@ -244,6 +244,27 @@ fi
 cd "$src"
 rm ./content/earthos/bin/shell
 cp ./parts/shell/image ./content/earthos/bin/shell
+
+# Core utilities
+echo "
+===== BUILDING CORE UTILITIES =====
+"
+cd ./parts/utils
+echo 1 > reduce # Reduce output
+if ! [ -d compiler ]; then
+	chmod +x sync.sh
+	dummy=`(./sync.sh) &> /dev/null` || {
+	echo -e "${RED}Failed to sync the dependencies - process exited with code ${YELLOW}${?}${NC}"; echo; echo "Debug info: "; ./sync.sh; exit 1
+	}
+fi
+./build.sh "" "" "$auto"
+sv=$?
+if ((sv != 0)); then
+	echo -e "${RED}Failed to build core utilities - process exited with code ${YELLOW}${sv}${NC}"
+	exit $sv
+fi
+cd "$src"
+cp ./parts/utils/out/* ./content/earthos/bin/
 
 # Remaining files
 echo "
@@ -352,6 +373,8 @@ done
 echo "
 ===== BUILDING FILESYSTEMS =====
 "
+cp project.conf build/FSSC-Builder
+cp config/* build/FSSC-Builder/config/
 cd ./build/FSSC-Builder
 chmod +x ./build.sh
 ./build.sh "$auto"
