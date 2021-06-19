@@ -1,0 +1,8 @@
+# Build directory
+build/
+
+# Dependencies
+parts/
+
+# Output
+*.fssc
