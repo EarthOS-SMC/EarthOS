@@ -5,6 +5,9 @@ fatt=()
 ###
 
 ### c/
+# /boot.smc
+fattn[${#fattn[@]}]="/boot.smc"
+fatt[${#fatt[@]}]="rw-rw----;root;root;"
 # /ekrnl
 fattn[${#fattn[@]}]="/ekrnl"
 fatt[${#fatt[@]}]="rw-rw----;root;root;"
