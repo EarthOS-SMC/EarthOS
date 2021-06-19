@@ -5,12 +5,6 @@ fatt=()
 ###
 
 ### c/
-# /boot.smc
-fattn[${#fattn[@]}]="/boot.smc"
-fatt[${#fatt[@]}]="rw-rw----;root;root;"
-# /boot
-fattn[${#fattn[@]}]="/boot"
-fatt[${#fatt[@]}]="rw-rw-r--;root;root;"
 # /etc
 fattn[${#fattn[@]}]="/etc"
 fatt[${#fatt[@]}]="rw-rw-r--;root;root;"
@@ -35,11 +29,6 @@ fatt[${#fatt[@]}]="rw-rw-r--;root;root;"
 # /proc
 fattn[${#fattn[@]}]="/proc"
 fatt[${#fatt[@]}]="r--r--r--;root;root;"
-
-### c/boot
-# /boot/ekrnl
-fattn[${#fattn[@]}]="/boot/ekrnl"
-fatt[${#fatt[@]}]="rw-rw----;root;root;"
 
 ### c/etc
 # /etc/release
