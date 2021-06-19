@@ -51,6 +51,18 @@ fatt[${#fatt[@]}]="rw-rw-r--;root;root;"
 # /bin/shell
 fattn[${#fattn[@]}]="/bin/shell"
 fatt[${#fatt[@]}]="rwxrwxr-x;root;root;"
+# /bin/ls
+fattn[${#fattn[@]}]="/bin/ls"
+fatt[${#fatt[@]}]="rwxrwxr-x;root;root;"
+# /bin/pwd
+fattn[${#fattn[@]}]="/bin/pwd"
+fatt[${#fatt[@]}]="rwxrwxr-x;root;root;"
+# /bin/cat
+fattn[${#fattn[@]}]="/bin/cat"
+fatt[${#fatt[@]}]="rwxrwxr-x;root;root;"
+# /bin/touch
+fattn[${#fattn[@]}]="/bin/touch"
+fatt[${#fatt[@]}]="rwxrwxr-x;root;root;"
 
 ### c/sbin
 # /sbin/init
