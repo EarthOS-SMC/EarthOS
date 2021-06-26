@@ -32,6 +32,8 @@ git clone https://github.com/EarthOS-SMC/user-setup "${SRC}/parts/user-setup" &
 git clone https://github.com/EarthOS-SMC/UI "${SRC}/parts/ui" &
 # shell
 git clone https://github.com/EarthOS-SMC/shell "${SRC}/parts/shell" &
+# Core utilities
+git clone https://github.com/EarthOS-SMC/EarthOS-utils "${SRC}/parts/utils" &
 # EarthOS installer
 #if [ -d "${SRC}/content/earthos/install" ]; then
 #	rm -rf "${SRC}/content/earthos/install"
