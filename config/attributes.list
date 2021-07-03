@@ -63,6 +63,9 @@ fatt[${#fatt[@]}]="rwxrwxr-x;root;root;"
 # /bin/touch
 fattn[${#fattn[@]}]="/bin/touch"
 fatt[${#fatt[@]}]="rwxrwxr-x;root;root;"
+# /bin/mount
+fattn[${#fattn[@]}]="/bin/mount"
+fatt[${#fatt[@]}]="rwxrwxr-x;root;root;"
 
 ### c/sbin
 # /sbin/init
