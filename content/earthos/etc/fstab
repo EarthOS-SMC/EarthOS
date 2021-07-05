@@ -1,0 +1,5 @@
+### EarthOS installer fstab file ###
+# root fs
+/dev/md2 / ro
+# boot partition
+/dev/md1 /boot ro
