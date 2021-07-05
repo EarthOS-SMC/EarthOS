@@ -46,6 +46,9 @@ fatt[${#fatt[@]}]="rw-rw-r--;root;root;"
 # /etc/hostname
 fattn[${#fattn[@]}]="/etc/hostname"
 fatt[${#fatt[@]}]="rw-rw-r--;root;root;"
+# /etc/fstab
+fattn[${#fattn[@]}]="/etc/fstab"
+fatt[${#fatt[@]}]="rw-rw-r--;root;root;"
 
 ### c/bin
 # /bin/shell
