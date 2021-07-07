@@ -29,6 +29,9 @@ fatt[${#fatt[@]}]="rw-rw-r--;root;root;"
 # /proc
 fattn[${#fattn[@]}]="/proc"
 fatt[${#fatt[@]}]="r--r--r--;root;root;"
+# /boot
+fattn[${#fattn[@]}]="/boot"
+fatt[${#fatt[@]}]="rw-rw-r--;root;root;"
 
 ### c/etc
 # /etc/release
