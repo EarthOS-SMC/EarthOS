@@ -20,4 +20,5 @@
 	<project name="EarthOS_userspace_ui" path="userspace/ui" />
 	<project name="EarthOS_userspace_shell" path="userspace/shell" />
 	<project name="EarthOS_userspace_coreutils" path="userspace/coreutils" />
+	<project name="EarthOS_installer_rootfs" path="installer/rootfs" />
 </manifest>
