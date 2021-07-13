@@ -8,5 +8,16 @@
 	<default revision="dev"
 		 remote="earthos"
 		 sync-j="4" />
+	<project name="EarthOS_build" path="build" />
+	<project name="EarthOS_build_tools" path="build/tools" />
 	<project name="adazem009/PowerSlash" path="build/pwc" remote="github" revision="c" />
+	<project name="EarthOS_build_pwuc" path="build/pwuc" revision="c" />
+	<project name="EarthOS_boot_mbr" path="boot/mbr" />
+	<project name="EarthOS_boot_lbl" path="boot/lbl" />
+	<project name="EarthOS_kernel" path="kernel" />
+	<project name="EarthOS_userspace_init" path="userspace/init" />
+	<project name="EarthOS_userspace_usrsetup" path="userspace/usrsetup" />
+	<project name="EarthOS_userspace_ui" path="userspace/ui" />
+	<project name="EarthOS_userspace_shell" path="userspace/shell" />
+	<project name="EarthOS_userspace_coreutils" path="userspace/coreutils" />
 </manifest>
