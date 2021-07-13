@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+	<remote name="earthos"
+		fetch="https://github.com/EarthOS-SMC"
+		revision="dev" />
+	<default revision="dev"
+		 remote="earthos"
+		 sync-j="4" />
+	<project name="PowerSlash" path="build/pwc" revision="c" />
+</manifest>
