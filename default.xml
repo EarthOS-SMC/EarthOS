@@ -18,7 +18,7 @@
 	<project name="EarthOS_boot_lbl" path="boot/lbl" />
 	<project name="EarthOS_kernel" path="kernel" />
 	<project name="EarthOS_userspace_init" path="userspace/init" />
-	<project name="EarthOS_userspace_usrsetup" path="userspace/usrsetup" />
+	<project name="EarthOS_userspace_service_usrsetup" path="userspace/service/usrsetup" />
 	<project name="EarthOS_userspace_ui" path="userspace/ui" />
 	<project name="EarthOS_userspace_shell" path="userspace/shell" />
 	<project name="EarthOS_userspace_coreutils" path="userspace/coreutils" />
