@@ -20,7 +20,7 @@
 	<project name="EarthOS_userspace_init" path="userspace/init" />
 	<project name="EarthOS_userspace_service_usrsetup" path="userspace/service/usrsetup" />
 	<project name="EarthOS_userspace_service_banner" path="userspace/service/banner" />
-	<project name="EarthOS_userspace_ui" path="userspace/ui" />
+	<project name="EarthOS_userspace_service_ui" path="userspace/service/ui" />
 	<project name="EarthOS_userspace_shell" path="userspace/shell" />
 	<project name="EarthOS_userspace_coreutils" path="userspace/coreutils" />
 	<project name="EarthOS_installer_rootfs" path="installer/rootfs" />
