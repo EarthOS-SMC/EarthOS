@@ -11,7 +11,7 @@
 	<project name="EarthOS_build" path="build" />
 	<project name="EarthOS_build_tools" path="build/tools" />
 	<project name="adazem009/PowerSlash" path="build/pwc" remote="github" revision="c" />
-	<project name="adazem009/FSSC-Builder" path="build/fssc-builder" remote="github" revision="main" />
+	<project name="EarthOS_build_tools_fssc" path="build/tools/fssc" />
 	<project name="EarthOS_build_pwuc" path="build/pwuc" revision="c" />
 	<project name="EarthOS_config" path="config" />
 	<project name="EarthOS_boot_mbr" path="boot/mbr" />
