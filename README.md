@@ -19,7 +19,7 @@ mkdir EarthOS && cd EarthOS
 ```
 Install repo in the directory:
 ```
-repo init -u https://github.com/EarthOS-SMC/EarthOS.git -u dev
+repo init -u https://github.com/EarthOS-SMC/EarthOS.git -b dev
 ```
 To sync the repositories:
 ```
